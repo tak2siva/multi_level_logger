@@ -34,15 +34,16 @@ Or install it yourself as:
     
     ###  To enable specific log or set diffrent files ###
     
-    logger = MLogger.create(:error=>"log/new_error.log",
-                            :info=>"log/info.log")       ## Only error and info are logged in given file
+    logger = MLogger.create(
+                :error=>"log/new_error.log",
+                :info=>"log/info.log")       ## Only error and info are logged in given file
                             
     ### Rails default logger will be disabled by default
     ### To enable 
     
     logger = MLogger.create(:all=>true, :default_logger => true)
                             
-### Ruby on Rails Usage
+## Ruby on Rails Usage
 
     ## config/environments/production.rb
     
