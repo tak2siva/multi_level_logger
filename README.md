@@ -47,7 +47,7 @@ Or install it yourself as:
 
     ## config/environments/production.rb
     
-    config.logger = MLogger.create(:all=>true)
+    config.logger = MultiLevelLogger::MLogger.create(:all=>true)
 
 ## Contributing
 
