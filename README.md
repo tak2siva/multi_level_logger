@@ -4,6 +4,8 @@ A gem to write diffrent level of Ruby logs in separate files.
 
 There are six log levels in Ruby (i.e) INFO, WARN, DEBUG, ERROR, FATAL, UNKNOWN. Purpose of this gem is to log them in diffrent files.
 
+https://rubygems.org/gems/multi_level_logger
+
 ## Installation
 
 Add this line to your application's Gemfile:
