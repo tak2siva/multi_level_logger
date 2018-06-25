@@ -17,7 +17,7 @@ module MultiLevelLogger
 					end
 				end
 
-				@shit_age = opts[:shift_age] || 0
+				@shift_age = opts[:shift_age] || 0
 				@shift_size = opts[:shift_size] || 1048576
 
 				unless File.directory?("log") 
@@ -25,11 +25,11 @@ module MultiLevelLogger
 				end
 
 				@logdev_warn ||=  Logger::LogDevice.new(opts[:warn] || "log/warn.log", :shift_age => @shift_age, :shift_size => @shift_size)        if (opts[:all] || opts[:warn])
-				@logdev_info ||= Logger::LogDevice.new(opts[:info] || "log/info.log", :shift_age => @shit_age, :shift_size => @shift_size)	    if (opts[:all] || opts[:info])
-				@logdev_debug ||= Logger::LogDevice.new(opts[:debug] || "log/debug.log", :shift_age => @shit_age, :shift_size => @shift_size)       if (opts[:all] || opts[:debug])
-				@logdev_error ||= Logger::LogDevice.new(opts[:error] || "log/error.log", :shift_age => @shit_age, :shift_size => @shift_size)	    if (opts[:all] || opts[:error])
-				@logdev_fatal ||= Logger::LogDevice.new(opts[:fatal] || "log/fatal.log", :shift_age => @shit_age, :shift_size => @shift_size)	    if (opts[:all] || opts[:fatal])
-				@logdev_unknown ||= Logger::LogDevice.new(opts[:unknown] || "log/unknown.log", :shift_age => @shit_age, :shift_size => @shift_size) if (opts[:all] || opts[:unknow])
+				@logdev_info ||= Logger::LogDevice.new(opts[:info] || "log/info.log", :shift_age => @shift_age, :shift_size => @shift_size)	    if (opts[:all] || opts[:info])
+				@logdev_debug ||= Logger::LogDevice.new(opts[:debug] || "log/debug.log", :shift_age => @shift_age, :shift_size => @shift_size)       if (opts[:all] || opts[:debug])
+				@logdev_error ||= Logger::LogDevice.new(opts[:error] || "log/error.log", :shift_age => @shift_age, :shift_size => @shift_size)	    if (opts[:all] || opts[:error])
+				@logdev_fatal ||= Logger::LogDevice.new(opts[:fatal] || "log/fatal.log", :shift_age => @shift_age, :shift_size => @shift_size)	    if (opts[:all] || opts[:fatal])
+				@logdev_unknown ||= Logger::LogDevice.new(opts[:unknown] || "log/unknown.log", :shift_age => @shift_age, :shift_size => @shift_size) if (opts[:all] || opts[:unknow])
 
 				if @logdev_warn && severity == WARN
 					@logdev_warn.write(
