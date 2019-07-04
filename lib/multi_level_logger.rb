@@ -29,7 +29,7 @@ module MultiLevelLogger
 				@logdev_debug ||= Logger::LogDevice.new(opts[:debug] || "log/debug.log", :shift_age => @shift_age, :shift_size => @shift_size)       if (opts[:all] || opts[:debug])
 				@logdev_error ||= Logger::LogDevice.new(opts[:error] || "log/error.log", :shift_age => @shift_age, :shift_size => @shift_size)	    if (opts[:all] || opts[:error])
 				@logdev_fatal ||= Logger::LogDevice.new(opts[:fatal] || "log/fatal.log", :shift_age => @shift_age, :shift_size => @shift_size)	    if (opts[:all] || opts[:fatal])
-				@logdev_unknown ||= Logger::LogDevice.new(opts[:unknown] || "log/unknown.log", :shift_age => @shift_age, :shift_size => @shift_size) if (opts[:all] || opts[:unknow])
+				@logdev_unknown ||= Logger::LogDevice.new(opts[:unknown] || "log/unknown.log", :shift_age => @shift_age, :shift_size => @shift_size) if (opts[:all] || opts[:unknown])
 
 				if @logdev_warn && severity == WARN
 					@logdev_warn.write(
